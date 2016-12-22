@@ -1,5 +1,5 @@
 import requests, requests.utils
-from py_ms_cognitive_search import PyMsCognitiveSearch
+from .py_ms_cognitive_search import PyMsCognitiveSearch
 
 ##
 ##
@@ -53,6 +53,7 @@ class ImageResult(object):
     host_page_url: the bing url to the host page
     content_size: size of the image
     thumbnail_url: url of the thumbnail
+    encoding_format: format of the image
 
     Not included: lots of info, poke in json to see.
     '''
@@ -67,4 +68,4 @@ class ImageResult(object):
         self.host_page_url = result.get('hostPageUrl')
         self.content_size = result.get('contentSize')
         self.thumbnail_url= result.get('thumbnailUrl')
-
+        self.encoding_format = result.get('encodingFormat')
